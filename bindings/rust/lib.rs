@@ -43,19 +43,14 @@ pub fn language() -> Language {
     unsafe { tree_sitter_c() }
 }
 
-/// The source of the C tree-sitter grammar description.
-pub const GRAMMAR: &str = include_str!("../../grammar.js");
-
 /// The syntax highlighting query for this language.
 pub const HIGHLIGHT_QUERY: &str = include_str!("../../queries/highlights.scm");
 
-/// The symbol tagging query for this language.
-pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
+/// The local-variable syntax highlighting query for this language.
+pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 
-/// The content of the [`node-types.json`][] file for this grammar.
-///
-/// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
-pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
+/// The injections query for this language.
+pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");
 
 #[cfg(test)]
 mod tests {
